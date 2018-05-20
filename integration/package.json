@@ -1,0 +1,37 @@
+{
+  "name": "chakram-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "chakram",
+    "typescript",
+    "mocha",
+    "allure"
+  ],
+  "author": "Marcin Zietara",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/f41c0n/automated-tests-ts.git"
+  },
+  "scripts": {
+    "lint": "tslint --project tsconfig.json --type-check 'src/**/*.ts'",
+    "tsc": "tsc",
+    "mocha": "mocha build/tests/*.spec.js --opts src/configs/mocha.opts",
+    "pretest": "npm run tsc",
+    "test": "npm run mocha",
+    "posttest": "allure generate ../reports/integration/allure-results --clean -o ../reports/integration/allure-report && allure open ../reports/integration/allure-report"
+  },
+  "dependencies": {
+    "@types/mocha": "^5.2.0",
+    "@types/node": "^10.1.2",
+    "allure-commandline": "^2.5.0",
+    "chakram": "^1.5.0",
+    "jasmine-data-provider": "^2.2.0",
+    "mocha": "^5.2.0",
+    "mocha-allure-reporter": "^1.4.0",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
+  }
+}

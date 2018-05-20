@@ -1,0 +1,43 @@
+{
+  "name": "cucumber-poc",
+  "version": "1.0.0",
+  "description": "Protractor Cucumber POC in TypeScript",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "author": "Marcin Zietara",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/f41c0n/automated-tests-ts.git"
+  },
+  "keywords": [
+    "cucumber",
+    "typescript",
+    "gherkin",
+    "bdd"
+  ],
+  "dependencies": {
+    "chai": "4.1.2",
+    "chai-as-promised": "7.1.1",
+    "cpx": "1.5.0",
+    "cucumber": "^4.2.1",
+    "cucumberjs-allure-reporter": "1.0.3",
+    "protractor": "5.3.2",
+    "protractor-cucumber-framework": "5.0.0",
+    "rimraf": "2.6.2",
+    "tslint": "5.10.0",
+    "typescript": "2.8.3"
+  },
+  "scripts": {
+    "update": "webdriver-manager update --ie64 --chrome --gecko",
+    "lint": "tslint --project tsconfig.json --type-check 'src/**/*.ts'",
+    "remove": "rimraf build/",
+    "tsc": "tsc",
+    "feature": "cpx src/**/*.feature build/",
+    "pretest": "npm run remove && npm run tsc && npm run feature",
+    "test": "protractor build/config.js",
+    "test-grid": "npm run pretest && protractor build/grid-config.js"
+  }
+}

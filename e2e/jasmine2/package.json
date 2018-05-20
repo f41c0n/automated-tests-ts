@@ -1,0 +1,42 @@
+{
+  "name": "jasmine2-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [
+    "testing",
+    "bdd",
+    "jasmine2",
+    "tests"
+  ],
+  "author": "Marcin Zietara",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/f41c0n/automated-tests-ts.git"
+  },
+  "dependencies": {
+    "@types/jasmine": "2.5.45",
+    "allure-commandline": "^2.5.0",
+    "jasmine-allure-reporter": "^1.0.2",
+    "jasmine-data-provider": "^2.2.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "protractor": "^5.3.2",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
+  },
+  "scripts": {
+    "update": "webdriver-manager update --chrome --gecko",
+    "lint": "tslint --project tsconfig.json --type-check 'src/**/*.ts'",
+    "remove": "rimraf build/",
+    "tsc": "tsc",
+    "pretest": "npm run remove && npm run tsc",
+    "test": "protractor build/config.js",
+    "posttest": "allure generate ../../reports/e2e/jasmine2/allure-results --clean -o ../../reports/e2e/jasmine2/allure-report && allure open ../../reports/e2e/jasmine2/allure-report",
+    "test-grid": "npm run pretest && protractor build/grid-config.js"
+  }
+}

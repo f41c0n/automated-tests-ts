@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [ "es2015", "dom" ],
+    "module": "commonjs",
+    "sourceMap": false,
+    "outDir": "build/",
+    "removeComments": true,
+    "types": [
+      "mocha",
+      "node"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
