@@ -16,7 +16,7 @@
     "url": "https://github.com/f41c0n/automated-tests-ts.git"
   },
   "scripts": {
-    "lint": "tslint --project tsconfig.json --type-check 'src/**/*.ts'",
+    "lint": "tslint --project tsconfig.json",
     "tsc": "tsc",
     "mocha": "mocha build/tests/*.spec.js --opts src/configs/mocha.opts",
     "pretest": "npm run tsc",
