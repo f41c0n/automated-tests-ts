@@ -31,7 +31,7 @@
   },
   "scripts": {
     "update": "webdriver-manager update --chrome --gecko",
-    "lint": "tslint --project tsconfig.json --type-check 'src/**/*.ts'",
+    "lint": "tslint --project tsconfig.json",
     "remove": "rimraf build/",
     "tsc": "tsc",
     "pretest": "npm run remove && npm run tsc",

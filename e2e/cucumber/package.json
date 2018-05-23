@@ -32,7 +32,7 @@
   },
   "scripts": {
     "update": "webdriver-manager update --ie64 --chrome --gecko",
-    "lint": "tslint --project tsconfig.json --type-check 'src/**/*.ts'",
+    "lint": "tslint --project tsconfig.json",
     "remove": "rimraf build/",
     "tsc": "tsc",
     "feature": "cpx src/**/*.feature build/",
