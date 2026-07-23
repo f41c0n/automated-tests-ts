@@ -1,4 +1,4 @@
-export const postData: object = [
+export const postData: any[] = [
     {postData: {string: 'text'}},
     {postData: {number: 123}},
     {postData: {array: ['a', 'b', 'c']}},

@@ -16,22 +16,26 @@
     "url": "https://github.com/f41c0n/automated-tests-ts.git"
   },
   "scripts": {
-    "lint": "tslint --project tsconfig.json",
+    "lint": "eslint src",
     "tsc": "tsc",
-    "mocha": "mocha build/tests/*.spec.js --opts src/configs/mocha.opts",
+    "mocha": "mocha build/tests/*.spec.js",
     "pretest": "npm run tsc",
     "test": "npm run mocha",
     "posttest": "allure generate ../reports/integration/allure-results --clean -o ../reports/integration/allure-report && allure open ../reports/integration/allure-report"
   },
   "dependencies": {
-    "@types/mocha": "^5.2.0",
-    "@types/node": "^10.1.2",
-    "allure-commandline": "^2.5.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.13.3",
+    "allure-commandline": "^2.43.0",
+    "allure-mocha": "^3.10.2",
     "chakram": "^1.5.0",
-    "jasmine-data-provider": "^2.2.0",
-    "mocha": "^5.2.0",
-    "mocha-allure-reporter": "^1.4.0",
-    "tslint": "^5.10.0",
-    "typescript": "^2.8.3"
+    "mocha": "^11.7.6",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^9.39.5",
+    "typescript-eslint": "^8.65.0"
   }
 }
