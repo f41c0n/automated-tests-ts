@@ -1,5 +1,4 @@
 import { post, expect } from 'chakram';
-import * as using from 'jasmine-data-provider';
 import { environemnt, endpoint, timeout } from '../configs/config';
 import { postData } from '../testData/post.td';
 import schema from '../schemas/post.schema';
@@ -8,7 +7,7 @@ const url: string = environemnt + endpoint.post;
 
 describe('POST Endpoint', () => {
 
-    using(postData, (data: any) => {
+    postData.forEach((data: any) => {
         describe(`JSON: ${JSON.stringify(data.postData)}`, () => {
             let apiResponse: any;
 
