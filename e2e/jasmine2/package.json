@@ -1,16 +1,14 @@
 {
   "name": "jasmine2-poc",
   "version": "1.0.0",
-  "description": "",
+  "description": "WebdriverIO + Jasmine E2E POC in TypeScript",
   "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
   "keywords": [
     "testing",
-    "bdd",
-    "jasmine2",
-    "tests"
+    "e2e",
+    "webdriverio",
+    "jasmine",
+    "typescript"
   ],
   "author": "Marcin Zietara",
   "license": "MIT",
@@ -18,25 +16,20 @@
     "type": "git",
     "url": "https://github.com/f41c0n/automated-tests-ts.git"
   },
-  "dependencies": {
-    "@types/jasmine": "2.5.45",
-    "allure-commandline": "^2.5.0",
-    "jasmine-allure-reporter": "^1.0.2",
-    "jasmine-data-provider": "^2.2.0",
-    "jasmine-spec-reporter": "^4.2.1",
-    "protractor": "^5.3.2",
-    "rimraf": "^2.6.2",
-    "tslint": "^5.10.0",
-    "typescript": "^2.8.3"
-  },
   "scripts": {
-    "update": "webdriver-manager update --chrome --gecko",
-    "lint": "tslint --project tsconfig.json",
-    "remove": "rimraf build/",
-    "tsc": "tsc",
-    "pretest": "npm run remove && npm run tsc",
-    "test": "protractor build/config.js",
-    "posttest": "allure generate ../../reports/e2e/jasmine2/allure-results --clean -o ../../reports/e2e/jasmine2/allure-report && allure open ../../reports/e2e/jasmine2/allure-report",
-    "test-grid": "npm run pretest && protractor build/grid-config.js"
+    "test": "wdio run ./wdio.conf.ts",
+    "posttest": "allure generate ../../reports/e2e/jasmine2/allure-results --clean -o ../../reports/e2e/jasmine2/allure-report && allure open ../../reports/e2e/jasmine2/allure-report"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "@wdio/allure-reporter": "^9.30.1",
+    "@wdio/cli": "^9.30.1",
+    "@wdio/jasmine-framework": "^9.30.1",
+    "@wdio/local-runner": "^9.30.1",
+    "@wdio/spec-reporter": "^9.30.1",
+    "allure-commandline": "^2.43.0",
+    "tsx": "^4.23.9",
+    "typescript": "^7.0.2",
+    "webdriverio": "^9.30.1"
   }
 }

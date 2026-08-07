@@ -1,6 +1,8 @@
 ### Requirements
 Installed:
-* nodejs
+* Node.js
+* Google Chrome (WebdriverIO v9 auto-downloads the matching chromedriver — no
+  Selenium server, Java or webdriver-manager needed)
 ### Installing
 Navigate to e2e/jasmine2 directory
 ```
@@ -14,24 +16,23 @@ Install all modules
 ```
 npm install
 ```
-Update webdriver-manager
-```
-npm run update
-```
 ### Tests
 Run example test
 ```
 npm test
 ```
+Tests run headless Chrome against https://angularjs.org/. To run without the
+Allure report auto-opening afterwards, use:
+```
+npx wdio run ./wdio.conf.ts
+```
 ### Report
-cucumber - report should be generated after test ends
-jasmine2 - report should be opened after test ends
+`npm test` generates an Allure report and opens it when the run ends (the
+`allure open` step starts a local web server and stays running until you stop
+it with Ctrl+C).
 
-Navigate to report
+Reports are written to:
 ```
-cd reports/e2e/jasmine/allure-report and open index.html
-```
-or
-```
-cd reports/e2e/cucumber/allure-report and open *-testsuite.xml
+reports/e2e/jasmine2/allure-report/index.html
+reports/e2e/cucumber/allure-report/index.html
 ```
