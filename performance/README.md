@@ -1,21 +1,21 @@
 ### Requirements
-Installed maven
+Installed:
+* Maven
+* JDK (Java 8+; tested on Java 26 with JMeter 5.6.2 via jmeter-maven-plugin 3.8.0)
 ### Installing
 Navigate to performance/ directory
 ```
 cd performance
 ```
 ### Tests
-Run example tests
+Run example tests (downloads JMeter on first run)
 ```
-mvn verify
+mvn clean verify
 ```
 ### Report
-Generate report from tests results
+An HTML dashboard report is generated automatically by the `verify` run — no
+separate step is needed. Open it at:
 ```
-mvn pre-site
+target/jmeter/reports/httpbin/index.html
 ```
-Navigate to report
-```
-cd reports/performance and open index.html
-```
+Raw results (JTL/CSV) are written to `target/jmeter/results/`.
